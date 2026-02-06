@@ -87,9 +87,8 @@ void sc_likelihood(const std::vector<double> &params_vec,
 
             _file_log << "ll=" <<  std::setprecision(10) << tl  << "\n";
 
-            _file_iteration.close();
-
-            throw std::domain_error("Likelihood is Nan");
+            _file_log.flush();
+            continue;
         }
 
         posterior(xg, cell, S, Si); // updates mean/cov     
