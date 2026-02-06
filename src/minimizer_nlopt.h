@@ -94,7 +94,7 @@ Although the tolerance criterium was not met, the last valid step is used for pa
 
     catch(std::exception &e) {
         _file_log << "(minimize_wrapper) ERROR: Log likelihood optimization failed (" << e.what() << ")" << std::endl;
-        throw;
+        return false;
     }
     _save_ll = false; // stop ll output
 
@@ -199,7 +199,7 @@ Although the tolerance criterium was not met, the last valid step is used for pa
 
     catch(std::exception &e) {
         _file_log << "(minimize_wrapper) ERROR: Log likelihood optimization failed (" << e.what() << ")" << std::endl;
-        throw;
+        return false;
     }
     _save_ll = false; // stop ll output
 
